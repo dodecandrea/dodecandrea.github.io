@@ -17,7 +17,7 @@ a {
     left: 0;
     right: 0;
     bottom: 0;
-    transition: opacity 4s;
+    transition: background-color 4s;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -26,11 +26,25 @@ a {
 }
 
 #unity-overlay.hidden {
+    background-color: black;
+    pointer-events: none;
+}
+
+#link {
+    transition: opacity 1s;
+}
+
+#link.hidden {
     opacity: 0;
     pointer-events: none;
 }
 
-#unity-overlay.show-overlay {
+#link.show-overlay {
     opacity: 1;
+    pointer-events: all;
+}
+
+#unity-overlay.show-overlay {
+    background-color: transparent;
     pointer-events: all;
 }

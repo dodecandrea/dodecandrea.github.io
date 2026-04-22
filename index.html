@@ -13,7 +13,7 @@
   <canvas id="unity-canvas" width=1280 height=720 tabindex="-1"
     style="width: 100vw; height: 100vh; background: #231F20; position: fixed; top: 0; left: 0; right: 0; bottom: 0;"></canvas>
   <div id="unity-overlay" class="hidden">
-    <div><a href="https://soundcloud.com/dodecandrea/tracks-1/s-Tnv81e095dS" target="_blank" id="link">...</a></div>
+    <div><a href="https://soundcloud.com/dodecandrea/tracks-1/s-Tnv81e095dS" target="_blank" id="link"></a></div>
   </div>
   <script src="Build/test.loader.js"></script>
 
@@ -44,13 +44,13 @@
       // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
       // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
     }, function (progress) {
-
+      document.querySelector("#link").innerText = ".".repeat(Math.floor(progress * 10));
     }).then(function (unityInstance) {
       setTimeout(() => {
         document.querySelector("#unity-overlay").classList.add("show-overlay");
         document.querySelector("#link").className = "hidden";
         setTimeout(() => {
-          document.querySelector("#link").innerText = "Listen to -";
+          document.querySelector("#link").innerText = "Listen to x";
           document.querySelector("#link").className = "show-overlay";
         }, 1000);
       }, 2000);
